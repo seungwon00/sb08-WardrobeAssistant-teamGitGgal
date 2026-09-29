@@ -20,7 +20,7 @@ spring:
       host: ${REDIS_HOST}
       port: ${REDIS_PORT}
       ssl:
-        enabled: true
+        enabled: ${REDIS_SSL_ENABLED:true}
 
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
