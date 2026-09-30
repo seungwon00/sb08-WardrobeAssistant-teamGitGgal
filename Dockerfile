@@ -7,6 +7,9 @@ COPY gradlew .
 COPY gradle gradle
 COPY build.gradle settings.gradle ./
 
+# gradlew 실행에 필요한 xargs 등 제공 (amazoncorretto 베이스엔 findutils 미포함)
+RUN yum install -y findutils && yum clean all
+
 # 의존성 다운로드 (캐싱 레이어)
 RUN chmod +x ./gradlew && \
     ./gradlew dependencies --no-daemon
