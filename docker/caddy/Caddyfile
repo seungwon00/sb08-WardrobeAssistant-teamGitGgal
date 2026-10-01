@@ -3,11 +3,6 @@
 }
 
 {$DOMAIN} {
-	tls {
-		issuer acme
-		issuer zerossl
-	}
-
 	reverse_proxy app:8080
 
 	encode gzip
